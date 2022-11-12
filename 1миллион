@@ -1,7 +1,7 @@
 public class nuic {
   public static void main(String[] args) {
     int num = 1000000;
-    int i = 1;
+    int i = 3;
     while (i < num) {
       int mod = num % i;
       if (mod == 0){

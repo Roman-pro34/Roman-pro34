@@ -1,9 +1,9 @@
 public class nuic {
     public static void main(String[] args) {
-
-        int b = 100000;
-        int a = 500000;
-        for (int i = a; i > b; i--) {
+        int i = 500000;
+        i--;
+        while ( 100000 < i){
+            i = i - 2 ;
             System.out.println(i);
         }
     }

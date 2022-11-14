@@ -1,0 +1,13 @@
+public class nuic {
+    public static void main(String[] args) {
+        int num = 100000;
+        int i = -1000;
+        while (i < num) {
+            double mod = Math.pow(i, 2);
+            if ((mod <= num) && (i<0)){
+                System.out.println(i); }
+            i++;
+        }
+
+    }
+}

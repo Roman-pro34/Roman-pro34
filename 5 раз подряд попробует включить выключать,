@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class class5 {
+    public static void main(String[] args) {
+            String[] q = new String[5];
+
+            q[0] = "Вы зашли в темную комнату. В темноте слышен пугающий шорох. Ваши действия?";
+            q[1] = "Выйти из комнаты";
+            q[2] = "Нащупать выключатель";
+            q[3] = "Идти навстречу  звуку";
+            q[4] = "Сбежать от страха";
+
+            Scanner superscanner = new Scanner(System.in);
+
+            boolean gameOver = false;
+            int attemptsCount = 0;
+            int attemptsCount2 = 0;
+
+            while (gameOver != true) {
+                System.out.println(q[0]);
+                for (int i = 1; i < 5; i++) {
+                    System.out.println(i + ": " + q[i]);
+                }
+                System.out.print("Ваши действия: ");
+                int answer = superscanner.nextInt();
+
+                if (answer == 1) {
+                    System.out.println("Отлично!Но нужно продолжать и узнать этот зловещий звук ");
+                    gameOver = true; // закончить игру. Как вариант - вместо этого написать break.
+                }
+
+                if (answer == 2) {
+                    attemptsCount = attemptsCount + 1;
+                    attemptsCount2 = attemptsCount2 + 1;
+                    q[0] = "Свет не работает.";
+                    if (q[2].endsWith("свет")) {
+                        q[0] = "Не включается";
+                        q[2] = "Может проверить эле2ктричество";
+                    } else {
+                        q[2] = "Ещё  попробовать нажать на включатель.";
+                    }
+                    if (attemptsCount2 == 5) {
+                        System.out.println("В комнате загорелся свет.И мы увидели что там было:)");
+                        gameOver = true;
+                    }
+                }
+
+                if (answer == 3) {
+                    attemptsCount = attemptsCount + 1;
+                    if (q[0].endsWith("Шум ")) {
+                        q[0] = q[0] + " я слышу шум";
+                    } else {
+                        q[0] = "Шум  становится громче и громче";
+                    }
+                }
+
+                if (answer == 4) {
+                    System.out.println("Кто-то быстро сбежал от страха.Это был маленький котёнок ");
+                    gameOver = true;
+                }
+
+                if (attemptsCount == 10) {
+                    System.out.println("JOVNB");
+                    gameOver = true;
+                }
+            }
+        }
+    }
